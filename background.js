@@ -3,14 +3,14 @@ var tickRate = 60000 // On vérifiera l'api toutes les minutes
 function checkStream() {
     var xhr = new XMLHttpRequest()
     xhr.open("GET", "https://api.twitch.tv/helix/streams?user_login=funixgaming", true)
-    xhr.setRequestHeader('Client_ID', 'ukwmaut3y0g822wza1mib08auy40cw')
+    xhr.setRequestHeader("Client-ID", "ukwmaut3y0g822wza1mib08auy40cw")
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4) {
             var data = JSON.parse(xhr.responseText)
-            if(data["data"] === null){
-                chrome.browserAction.setIcon({path:"img/icon_red.png"})
+            if(data["data"].length === 0){
+                chrome.browserAction.setIcon({path:"img/red.png"})
             }else{
-                chrome.browserAction.setIcon({path:"img/icon_green.png"})
+                chrome.browserAction.setIcon({path:"img/green.png"})
             }
             // On relance la fonction après X secondes
             setTimeout(checkStream, tickRate)

@@ -5,7 +5,6 @@ xhr.onreadystatechange = function(channel) {
     if (xhr.readyState == 4) {
         var data = JSON.parse(xhr.responseText)
         var elm  = document.getElementById("info")
-        console.log(data)
         if (data["data"].length === 0) {
             elm.style.color = "red"
             elm.innerHTML = "FunixGaming n'est pas en live actuellement :("
