@@ -67,3 +67,37 @@ nav
 {
     text-align: center;
 }
+
+.btn-twitch {
+    color: #fff;
+    background-color: #7d53cd;
+    border-color: #7d53cd;
+}
+
+.btn-twitch:hover {
+    color: #fff;
+    background-color: #5f34b3;
+    border-color: #5f34b3;
+}
+
+.btn-twitch:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem #5f34b3;
+}
+
+.btn-twitch.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #7d53cd;
+    border-color: #7d53cd;
+}
+
+.btn-twitch:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #5f34b3;
+    border-color: #5f34b3;
+}
+
+.btn-twitch:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem #4d2a8e;
+}
