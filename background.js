@@ -1,23 +1,32 @@
-var tickRate = 60000 // On vérifiera l'api toutes les minutes
+var tickRate = 30000;
+var status = 0;
 
 function checkStream() {
-    var xhr = new XMLHttpRequest()
-    xhr.open("GET", "https://api.twitch.tv/helix/streams?user_login=funixgaming", true)
-    xhr.setRequestHeader("Client-ID", "ukwmaut3y0g822wza1mib08auy40cw")
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.twitch.tv/helix/streams?user_login=funixgaming", true);
+    xhr.setRequestHeader("Client-ID", "ukwmaut3y0g822wza1mib08auy40cw");
     xhr.onreadystatechange = function () {
-        if(xhr.readyState == 4) {
-            var data = JSON.parse(xhr.responseText)
-            if(data["data"].length === 0){
-                chrome.browserAction.setIcon({path:"img/red.png"})
-            }else{
-                chrome.browserAction.setIcon({path:"img/green.png"})
+        if (xhr.readyState === 4) {
+            var data = JSON.parse(xhr.responseText);
+            if (data["data"].length === 0) {
+                chrome.browserAction.setIcon({path:"img/red.png"});
+                status = 0;
+            } else {
+                var options = {
+                    type: "basic",
+                    title: "FunixGaming est en live !",
+                    message: "En live : " + data["data"][0]["title"],
+                    iconUrl: "img/logo.png"
+                };
+                chrome.browserAction.setIcon({path:"img/green.png"});
+                if (status === '0') {
+                    chrome.notifications.create(options);
+                    status = 1;
+                }
             }
-            // On relance la fonction après X secondes
             setTimeout(checkStream, tickRate)
         }
-    }
+    };
     xhr.send()
 }
-
-// On lance la fonction dès le démarrage
-checkStream()
+checkStream();
