@@ -1,10 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Funix Addon",
+  "name": "Funix Extension",
   "description": "FunixGaming Addon pour ne rien louper ! Lives, vidéos et autres !",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "contact@funixgaming.fr",
   "homepage_url": "https://funixgaming.fr",
+
+  "permissions": ["notifications"],
 
   "action": {
     "default_title": "Funix Addon",
@@ -17,6 +19,6 @@
   },
 
   "background": {
-    "service_worker": "src/js/background.js"
+    "service_worker": "src/js/background-chrome.js"
   }
 }

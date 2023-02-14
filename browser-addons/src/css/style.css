@@ -1,3 +1,8 @@
+* {
+    font-family: Bahnschrift, serif;
+    font-weight: normal;
+}
+
 body {
     width: 350px;
     height: 400px;
@@ -47,4 +52,16 @@ span {
 
 .fa-user {
     color: red;
+}
+
+.join-live a {
+    text-decoration: none;
+}
+
+.join-live:hover {
+    background-color: #503484;
+}
+
+.join-live:active {
+    background-color: #483d8b;
 }
