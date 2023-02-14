@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Funix Addon",
+  "description": "FunixGaming Addon pour ne rien louper ! Lives, vidéos et autres !",
+  "version": "1.0.0",
+  "author": "contact@funixgaming.fr",
+  "homepage_url": "https://funixgaming.fr",
+
+  "action": {
+    "default_title": "Funix Addon",
+    "default_popup": "src/html/base.html",
+    "default_icon": "src/icons/app_icon.png"
+  },
+
+  "icons": {
+    "64": "src/icons/app_icon.png"
+  },
+
+  "background": {
+    "service_worker": "src/js/background.js"
+  }
+}
