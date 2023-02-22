@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Funix Extention</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark">
+
+<div class="container">
+    <div class="row align-items-center p-2">
+        <div class="col">
+            <img src="../icons/app_icon.png" alt="funix-icon" width="48" height="48">
+        </div>
+        <div class="col-7 funix-links">
+            <a class="p-1" target="_blank" href="https://twitch.tv/funixgaming"><i class="fab fa-twitch"></i></a>
+            <a class="p-1" target="_blank" href="https://youtube.com/c/funixgaming"><i class="fab fa-youtube"></i></a>
+            <a class="p-1" target="_blank" href="https://twitter.com/funixgaming"><i class="fab fa-twitter"></i></a>
+            <a class="p-1" target="_blank" href="https://instagram.com/funixgaming_"><i class="fab fa-instagram"></i></a>
+            <a class="p-1" target="_blank" href="https://discord.gg/0u58pdR1VzgnH5ZY"><i class="fab fa-discord"></i></a>
+            <a class="p-1" target="_blank" href="https://tiktok.com/@_funix"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container text-center p-3">
+    <div class="row" id="nav-tab" role="tablist">
+        <div class="col">
+            <div class="category-selector category-selector-twitch nav-link active"
+                 data-bs-toggle="tab" data-bs-target="#twitch-tab-pane"
+                 aria-controls="twitch-tab-pane"
+                 id="twitch-selector">
+                <span>Twitch</span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="category-selector category-selector-youtube not-selected nav-link"
+                 data-bs-toggle="tab" data-bs-target="#youtube-tab-pane"
+                 aria-controls="youtube-tab-pane"
+                 id="youtube-selector">
+                <span>YouTube</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="body-data">
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="twitch-tab-pane" role="tabpanel" aria-describedby="twitch-selector" tabindex="0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <img id="twitch-stream-minia" class="img-fluid" src="../img/offline2.png" alt="miniature-live-twitch">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col p-2">
+                            <span id="twitch-stream-title">Hors Ligne</span>
+                        </div>
+                        <div class="col p-2">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <i class="fas fa-user"> <span id="twitch-stream-viewers">0</span></i>
+                                </div>
+                                <div class="col-8">
+                                    <i class="fas fa-gamepad"> <span id="twitch-game-name">Hors Ligne</span></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="join-live">
+                <a target="_blank" href="https://twitch.tv/funixgaming">
+                    <div class="p-2">
+                        <span>Rejoindre le live</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="youtube-tab-pane" role="tabpanel" aria-describedby="youtube-selector" tabindex="0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <h4>Onglet pas encore connecté à YouTube</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/base.js"></script>
+<script src="../js/twitch-handle-front.js"></script>
+
+</body>
+</html>
