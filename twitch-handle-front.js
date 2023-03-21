@@ -2,6 +2,7 @@ const spanStreamTitle = document.getElementById('twitch-stream-title');
 const spanTwitchViewers = document.getElementById('twitch-stream-viewers');
 const spanGameName = document.getElementById('twitch-game-name');
 const imgMiniaLive = document.getElementById('twitch-stream-minia');
+const joinLiveBtn = document.getElementById('join-live');
 const defaultMiniaLive = '../img/offline.png';
 const url = 'https://api.funixgaming.fr/twitch/streams/funix';
 
@@ -26,6 +27,7 @@ function updateLiveHtml(live) {
     setText(spanTwitchViewers, live.viewer_count.toString());
     setText(spanGameName, live.game_name);
     imgMiniaLive.src = live.thumbnail_url.replace("{width}", "990").replace("{height}", "540");
+    joinLiveBtn.hidden = false;
 }
 
 function turnOffLive() {
@@ -41,3 +43,4 @@ function setText(elem, text) {
 
 updateDataOnPopup();
 window.setInterval(updateDataOnPopup, 25000);
+
