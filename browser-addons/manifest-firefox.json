@@ -11,10 +11,7 @@
     "action": {
       "default_title": "Funix Addon",
       "default_popup": "src/html/base.html",
-     
-      "default_icon": {
-        "64":"src/icons/app_icon.png"
-      }
+      "default_icon": "src/icons/app_icon.png"
     },
   
     "icons": {
@@ -22,7 +19,7 @@
     },
   
     "background": {
-      "service_worker": "src/js/background.js"
+      "scripts": ["src/js/background.js"]
     }
   }
   
